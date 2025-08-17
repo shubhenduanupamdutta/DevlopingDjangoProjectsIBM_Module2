@@ -14,5 +14,5 @@ members = []
 
 [tool.ruff.lint]
 select = ["ALL"]
-ignore = ["D103", "D100", "ARG001"]
+ignore = ["D103", "D100", "ARG001", "DTZ011"]
 unfixable = ["F401"]
