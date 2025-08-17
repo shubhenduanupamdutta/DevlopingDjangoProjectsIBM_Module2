@@ -30,3 +30,12 @@ django-admin startproject myproject
 cd myfirstproject
 python manage.py startapp myapp
 ```
+
+## Setup Database
+
+In **myfirstproject** I am going with default option of sqlite3
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```

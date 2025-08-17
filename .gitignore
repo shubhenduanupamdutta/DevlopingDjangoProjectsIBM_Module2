@@ -11,3 +11,6 @@ wheels/
 
 # Environment Files
 *.env
+
+# Removing sqlite3 database
+db.sqlite3
