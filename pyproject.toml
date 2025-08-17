@@ -11,3 +11,8 @@ dependencies = [
 
 [tool.uv.workspace]
 members = []
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["D103", "D100", "ARG001"]
+unfixable = ["F401"]
