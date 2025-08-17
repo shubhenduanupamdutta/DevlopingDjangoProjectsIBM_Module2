@@ -13,6 +13,7 @@ dependencies = [
     "jinja2==3.0",
     "multidict==4.5",
     "pillow==10.0.0",
+    "python-dotenv>=1.0.1",
     "typing-extensions==4.1.1",
     "wheel==0.41.1",
 ]

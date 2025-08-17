@@ -1,9 +1,8 @@
 from django.http import Http404, HttpRequest, HttpResponse, HttpResponseRedirect
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
-from django.views import generic
 
-from .models import Course, Enrollment, Lesson
+from .models import Course
 
 
 # Create your views here.
