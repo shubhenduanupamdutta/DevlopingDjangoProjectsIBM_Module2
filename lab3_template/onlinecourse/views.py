@@ -30,5 +30,23 @@ def enroll(request: HttpRequest, course_id: int) -> HttpResponse:
         course.total_enrollment += 1
         course.save()
         # Return a HTTP response redirecting user to course list view
-        return HttpResponseRedirect(reverse(viewname="onlinecourse:popular_course_list"))
+        return HttpResponseRedirect(
+            reverse(viewname="onlinecourse:course_details", args=(course.id,)),  # pyright: ignore[reportAttributeAccessIssue]
+        )
+    return HttpResponse("Method not allowed", status=405)
+
+
+def course_details(request: HttpRequest, course_id: int) -> HttpResponse:
+    context = {}
+    if request.method == "GET":
+        try:
+            course = Course.objects.get(pk=course_id)
+            context["course"] = course
+            # Use render() method to generate HTML page by combining
+            # template and context
+            return render(request, "onlinecourse/course_detail.html", context)
+        except Course.DoesNotExist as e:
+            # If course does not exist, throw a Http404 error
+            msg = "No course matches the given id."
+            raise Http404(msg) from e
     return HttpResponse("Method not allowed", status=405)
